@@ -66,11 +66,14 @@
           "titleBar.inactiveForeground": "#e7e7e7"
         },
         "noCompatMode": true
-      }
+      },
+      "extensions": [
+        "eamodio.gitlens",
+        "wholroyd.jinja",
+        "ms-vsliveshare.vsliveshare"
+      ]
     }
   },
-  // Features to add to the dev container. More info: https://containers.dev/features.
-  // "features": {},
   // Use 'forwardPorts' to make a list of ports inside the container available locally.
   // "forwardPorts": [],
   // Use 'postCreateCommand' to run commands after the container is created.
