@@ -27,7 +27,9 @@
       "source=/etc/localtime,target=/etc/localtime,type=bind,readonly",
       "source=golang-course-vscode-extensions,target=/home/vscode/.vscode-server/extensions,type=volume",
       "source=golang-course-fonts,target=/home/vscode/.fonts,type=volume",
-      "source=golang-course-bashhistory,target=/commandhistory,type=volume"
+      "source=golang-course-bashhistory,target=/commandhistory,type=volume",
+      "source=golang-course-cache,target=/home/vscode/.cache,type=volume",
+      "source=golang-course-gopath,target=/go,type=volume"
   ],
   "customizations": {
     "vscode": {
@@ -51,7 +53,6 @@
         "terminal.integrated.env.linux": {},
         "terminal.integrated.tabs.enabled": true,
         "terminal.integrated.tabs.location": "left",
-        "go.lintTool": "golangci-lint",
         "workbench.colorCustomizations": {
           "activityBar.activeBackground": "#fcd279",
           "activityBar.activeBorder": "#fcaa79",
@@ -68,7 +69,37 @@
           "titleBar.inactiveBackground": "#79d4fd99",
           "titleBar.inactiveForeground": "#e7e7e7"
         },
-        "noCompatMode": true
+        "noCompatMode": true,
+        "go.lintTool": "golangci-lint",
+        "go.lintOnSave": "workspace",
+        "go.lintFlags": [
+          "--fast"
+        ],
+        "go.useLanguageServer": true,
+        "gopls": {
+          "ui.semanticTokens": true,
+          "ui.completion.usePlaceholders": true
+        },
+        "go.formatTool": "goimports",
+        "go.formatFlags": [
+          "-local",
+          "github.com/takt-corp/"
+        ],
+        "go.addTags": {
+          "tags": "json,validate",
+          "options": "json=omitempty,validate=omitempty",
+          "promptForTags": false,
+          "transform": "snakecase",
+          "template": ""
+        },
+        "[go]": {
+          "editor.formatOnSave": true,
+          "editor.defaultFormatter": "golang.go",
+          "editor.codeActionsOnSave": {
+            "source.organizeImports": "always",
+            "source.fixAll": "always"
+          }
+        }
       },
       "extensions": [
         "eamodio.gitlens",
