@@ -25,6 +25,7 @@
       "source=${localEnv:HOME}/.p10k.zsh,target=/home/vscode/.p10k.zsh,type=bind",
       "source=/var/run/docker.sock,target=/var/run/docker-host.sock,type=bind",
       "source=/etc/localtime,target=/etc/localtime,type=bind,readonly",
+      "source=golang-course-vscode-extensions,target=/home/vscode/.vscode-server/extensions,type=volume",
       "source=golang-course-fonts,target=/home/vscode/.fonts,type=volume",
       "source=golang-course-bashhistory,target=/commandhistory,type=volume"
   ],
