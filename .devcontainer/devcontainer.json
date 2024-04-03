@@ -14,7 +14,7 @@
     "ghcr.io/guiyomh/features/golangci-lint:0": {},
     "ghcr.io/guiyomh/features/pact-go:0": {},
     "ghcr.io/azutake/devcontainer-features/go-packages-install:0": {},
-    "ghcr.io/schlich/devcontainer-features/powerlevel10k:1": {}
+    "ghcr.io/prulloac/devcontainer-features/commitizen": {}
   },
   "containerEnv": {
       "WORKSPACE": "${containerWorkspaceFolder}",
@@ -25,7 +25,7 @@
       "source=${localEnv:HOME}/.p10k.zsh,target=/home/vscode/.p10k.zsh,type=bind",
       "source=/var/run/docker.sock,target=/var/run/docker-host.sock,type=bind",
       "source=/etc/localtime,target=/etc/localtime,type=bind,readonly",
-      "source=golang-course-fonts,target=/home/vscode/.fonts,type=volume",
+      "source=golang-course-fonts,target=/home/vscode/.fonts,type=volume"
   ],
   "customizations": {
     "vscode": {

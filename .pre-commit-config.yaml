@@ -1,0 +1,24 @@
+default_install_hook_types:
+- pre-commit
+- commit-msg
+- pre-push
+default_stages:
+- commit
+- push
+repos:
+- repo: https://github.com/pre-commit/pre-commit-hooks
+  rev: v4.4.0
+  hooks:
+  - id: check-vcs-permalinks
+  - id: end-of-file-fixer
+    exclude: "tests/((commands|data)/|test_|_test).+"
+  - id: trailing-whitespace
+    args: [ --markdown-linebreak-ext=md ]
+  - id: check-merge-conflict
+  - id: check-yaml
+    args: [ '--unsafe' ] # for mkdocs.yml
+  - id: detect-private-key
+- repo: https://github.com/commitizen-tools/commitizen
+  rev: v3.21.3 # automatically updated by Commitizen
+  hooks:
+  - id: commitizen

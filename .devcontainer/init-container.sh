@@ -30,9 +30,14 @@ function setup_zsh() {
   cp -f "${WORKSPACE}/.devcontainer/.zshrc" "${HOME}/.zshrc"
 }
 
+function install_pre_commit() {
+  pipx install pre-commit
+}
+
 function main() {
   importP10kConf
   setup_zsh
+  install_pre_commit
 }
 
 main
