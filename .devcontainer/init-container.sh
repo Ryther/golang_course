@@ -29,6 +29,10 @@ function setup_zsh() {
   cp -f "${WORKSPACE}/.devcontainer/.zshrc" "${HOME}/.zshrc"
 }
 
+function install_go_tools() {
+  go install golang.org/x/tools/cmd/goimports@latest
+}
+
 function install_pre_commit() {
   pipx install pre-commit
   pre-commit install
@@ -37,6 +41,7 @@ function install_pre_commit() {
 function main() {
   importP10kConf
   setup_zsh
+  install_go_tools
   install_pre_commit
 }
 
