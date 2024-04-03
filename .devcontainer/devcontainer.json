@@ -43,6 +43,7 @@
                 ]
             }
         },
+        "editor.fontFamily": "Victor Mono, Consolas, 'Courier New', monospace",
         "remote.WSL.fileWatcher.polling": true,
         "terminal.integrated.allowChords": false,
         "terminal.integrated.env.linux": {},
