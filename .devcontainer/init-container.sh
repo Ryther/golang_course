@@ -1,11 +1,5 @@
 #!/usr/bin/env bash
 
-function chown_volumes() {
-  sudo chown -R vscode:golang "/go"
-  sudo chown -R vscode:vscode "${HOME}/.fonts"
-  sudo chown -R vscode:vscode "${HOME}/.cache"
-}
-
 function importP10kConf() {
   if [ ! -e "${HOME}/.fonts/MesloLGS_NF_Regular.ttf" ]; then
     curl -o "${HOME}/.fonts/MesloLGS_NF_Regular.ttf" https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf
@@ -37,10 +31,10 @@ function setup_zsh() {
 
 function install_pre_commit() {
   pipx install pre-commit
+  pre-commit install
 }
 
 function main() {
-  chown_volumes
   importP10kConf
   setup_zsh
   install_pre_commit

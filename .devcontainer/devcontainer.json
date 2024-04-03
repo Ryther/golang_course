@@ -3,7 +3,7 @@
 {
   "name": "Go",
   // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-  "image": "mcr.microsoft.com/devcontainers/go:1-1.22-bookworm",
+  "dockerFile": "Dockerfile",
   "features": {
     "ghcr.io/devcontainers/features/common-utils:2": {},
     "ghcr.io/devcontainers/features/go:1": {},
@@ -21,15 +21,15 @@
       "SHELL": "/usr/bin/zsh"
   },
   "mounts": [
-      "source=${localEnv:HOME}/.ssh,target=/home/vscode/.ssh,type=bind",
-      "source=${localEnv:HOME}/.p10k.zsh,target=/home/vscode/.p10k.zsh,type=bind",
-      "source=/var/run/docker.sock,target=/var/run/docker-host.sock,type=bind",
-      "source=/etc/localtime,target=/etc/localtime,type=bind,readonly",
-      "source=golang-course-vscode-extensions,target=/home/vscode/.vscode-server/extensions,type=volume",
-      "source=golang-course-fonts,target=/home/vscode/.fonts,type=volume",
-      "source=golang-course-bashhistory,target=/commandhistory,type=volume",
-      "source=golang-course-cache,target=/home/vscode/.cache,type=volume",
-      "source=golang-course-gopath,target=/go,type=volume"
+      "source=${localEnv:HOME}/.ssh,target=/home/vscode/.ssh,type=bind,consistency=cached",
+      "source=${localEnv:HOME}/.p10k.zsh,target=/home/vscode/.p10k.zsh,type=bind,consistency=cached",
+      "source=/var/run/docker.sock,target=/var/run/docker-host.sock,type=bind,consistency=cached",
+      "source=/etc/localtime,target=/etc/localtime,type=bind,readonly,consistency=cached",
+      "source=golang-course-vscode-extensions,target=/home/vscode/.vscode-server/extensions,type=volume,consistency=cached",
+      "source=golang-course-fonts,target=/home/vscode/.fonts,type=volume,consistency=cached",
+      "source=golang-course-bashhistory,target=/commandhistory,type=volume,consistency=cached",
+      "source=golang-course-cache,target=/home/vscode/.cache,type=volume,consistency=cached",
+      "source=golang-course-gopath,target=/go,type=volume,consistency=cached"
   ],
   "customizations": {
     "vscode": {
